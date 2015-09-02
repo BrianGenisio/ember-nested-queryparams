@@ -18,6 +18,32 @@ var bikes = [{
   model: "Cross Check",
   isNew: true,
   style: "Cyclocross"
+}, {
+  id: idCount++,
+  brand: "Trek",
+  model: "Madone",
+  isNew: false,
+  style: "Race",
+  condition: "good"
+}, {
+  id: idCount++,
+  brand: "Trek",
+  model: "Superfly",
+  isNew: true,
+  style: "Mountain"
+}, {
+  id: idCount++,
+  brand: "Trek",
+  model: "Cali",
+  isNew: false,
+  style: "Mountain",
+  condition: "rough"
+}, {
+  id: idCount++,
+  brand: "Specialized",
+  model: "Allez",
+  isNew: true,
+  style: "Road"
 }];
 
 module.exports = {
