@@ -6,8 +6,10 @@
 </div>
 <div>
 	Styles: 
-	{{#each model.styles as |style|}}
-		{{style.name}}
+	{{#each proxiedStyles as |style|}}
+		<div>
+			{{input type="checkbox" checked=style.checked}} {{style.name}}
+		</div>
 	{{/each}}
 </div>
 {{outlet}}
