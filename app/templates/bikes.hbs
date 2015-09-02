@@ -4,4 +4,10 @@
 	|
 	{{#link-to 'bikes.used'}}Used Bikes{{/link-to}}
 </div>
+<div>
+	Styles: 
+	{{#each model.styles as |style|}}
+		{{style.name}}
+	{{/each}}
+</div>
 {{outlet}}

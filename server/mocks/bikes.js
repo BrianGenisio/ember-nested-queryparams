@@ -1,28 +1,13 @@
 module.exports = function(app) {
   var express = require('express');
+  var data = require('../data');
   var bikesRouter = express.Router();
 
-  var idCount = 0;
-  var bikes = [{
-    id: idCount++,
-    brand: "Specialized",
-    model: "Tricross",
-    isNew: false,
-    style: "Cyclocross",
-    condition: "fair"
-  }, {
-    id: idCount++,
-    brand: "Specialized",
-    model: "Sirrus",
-    isNew: true,
-    style: "Fitness"
-  }];
-
   bikesRouter.get('/', function(req, res) {
-    var result = bikes;
+    var result = data.bikes;
     
     if('isNew' in req.query) {
-      result = bikes.filter(function(bike) {
+      result = result.filter(function(bike) {
         return bike.isNew.toString() === req.query.isNew;
       });
     }
