@@ -1,0 +1,10 @@
+
+These are your bikes:
+
+<ul>
+{{#each model as |bike|}}
+	<li>{{bike.brand}} {{bike.model}} {{bike.category}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}
