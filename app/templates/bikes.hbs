@@ -8,7 +8,7 @@
 	Styles: 
 	{{#each proxiedStyles as |style|}}
 		<div>
-			{{input type="checkbox" checked=style.checked}} {{style.name}}
+			<input type="checkbox" name={{style.name}} checked={{style.checked}} onchange={{action "onChecked" value="target.name"}} />  {{style.name}} {{style.checked}}
 		</div>
 	{{/each}}
 </div>
