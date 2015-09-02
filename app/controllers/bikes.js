@@ -13,11 +13,5 @@ export default Ember.Controller.extend({
 
   stylesObserver: function() {
     console.log('Checked changed: ', this.get('checkedStyles'));
-  }.observes('checkedStyles.[]').on('init'),
-
-  actions: {
-    checked: function() {
-      console.log('Checked!!!', this.get('checkedStyles'));
-    }
-  }
+  }.observes('checkedStyles.[]').on('init')
 });
