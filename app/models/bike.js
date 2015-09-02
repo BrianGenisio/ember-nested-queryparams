@@ -4,5 +4,6 @@ export default DS.Model.extend({
   brand: DS.attr('string'),
   model: DS.attr('string'),
   isNew: DS.attr('boolean'),
-  style: DS.attr('string')
+  style: DS.attr('string'),
+  condition: DS.attr('string')
 });

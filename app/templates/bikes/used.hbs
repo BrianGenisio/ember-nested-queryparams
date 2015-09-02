@@ -1,0 +1,9 @@
+<h2>Used Bikes!!!</h2>
+
+<ul>
+{{#each model as |bike|}}
+	<li>{{bike.brand}} {{bike.model}} {{bike.category}} Condition: {{bike.condition}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}

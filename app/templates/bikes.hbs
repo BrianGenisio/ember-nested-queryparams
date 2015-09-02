@@ -1,10 +1,7 @@
 
-These are your bikes:
-
-<ul>
-{{#each model as |bike|}}
-	<li>{{bike.brand}} {{bike.model}} {{bike.category}}</li>
-{{/each}}
-</ul>
-
+<div>
+	{{#link-to 'bikes.new'}}New Bikes{{/link-to}}
+	|
+	{{#link-to 'bikes.used'}}Used Bikes{{/link-to}}
+</div>
 {{outlet}}

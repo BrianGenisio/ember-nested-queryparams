@@ -8,7 +8,8 @@ module.exports = function(app) {
     brand: "Specialized",
     model: "Tricross",
     isNew: false,
-    style: "Cyclocross"
+    style: "Cyclocross",
+    condition: "fair"
   }, {
     id: idCount++,
     brand: "Specialized",
@@ -18,33 +19,17 @@ module.exports = function(app) {
   }];
 
   bikesRouter.get('/', function(req, res) {
+    var result = bikes;
+    
+    if('isNew' in req.query) {
+      result = bikes.filter(function(bike) {
+        return bike.isNew.toString() === req.query.isNew;
+      });
+    }
+
     res.send({
-      'bikes': bikes
+      'bikes': result
     });
-  });
-
-  bikesRouter.post('/', function(req, res) {
-    res.status(201).end();
-  });
-
-  bikesRouter.get('/:id', function(req, res) {
-    res.send({
-      'bikes': {
-        id: req.params.id
-      }
-    });
-  });
-
-  bikesRouter.put('/:id', function(req, res) {
-    res.send({
-      'bikes': {
-        id: req.params.id
-      }
-    });
-  });
-
-  bikesRouter.delete('/:id', function(req, res) {
-    res.status(204).end();
   });
 
   app.use('/api/bikes', bikesRouter);
